@@ -27,8 +27,8 @@
 #include "WrapAroundFunction.hpp"
 #include <pthread.h>
 #include <sched.h>
+#include "PIDController.hpp"
 #include "BoundingBoxController.hpp"
-#include "PIDplusMRFTController.hpp"
 #include "Switch.hpp"
 #include "Sum.hpp"
 #include "Mux3D.hpp"

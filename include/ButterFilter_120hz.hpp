@@ -19,7 +19,6 @@ public:
     enum ports_id {IP_0_DATA,OP_0_DATA};
     DataMessage* runTask(DataMessage*);
     void process(DataMessage* t_msg, Port* t_port);
-    std::vector<Port*> getPorts();
     ButterFilter_120hz();
     ~ButterFilter_120hz();
 };

@@ -21,7 +21,6 @@ class ROSUnit_ResetController :  public ROSUnit{
     public:
         enum ports_id {OP_0_DATA};
         void process(DataMessage* t_msg, Port* t_port);
-        std::vector<Port*> getPorts();
         DataMessage* runTask(DataMessage*);
 
         ROSUnit_ResetController(ros::NodeHandle&);

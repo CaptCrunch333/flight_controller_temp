@@ -18,7 +18,6 @@ class ROSUnit_RestNormSettings :  public ROSUnit{
     public:
         enum ports_id {OP_0_DATA};
         void process(DataMessage* t_msg, Port* t_port);
-        std::vector<Port*> getPorts();
         DataMessage* runTask(DataMessage*);
 
         void receiveMsgData(DataMessage* t_msg);  

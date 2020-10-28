@@ -23,7 +23,6 @@ public:
     enum ports_id {IP_0_DATA, IP_1_DATA,OP_0_DATA};
     DataMessage* runTask(DataMessage*);
     void process(DataMessage* t_msg, Port* t_port);
-    std::vector<Port*> getPorts();
     Sum* sum_ref_yaw = new Sum(std::minus<float>());
     Demux3D* prov_demux_yaw = new Demux3D();
     Mux3D* error_mux_yaw = new Mux3D();

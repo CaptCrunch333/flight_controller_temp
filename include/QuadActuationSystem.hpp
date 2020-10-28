@@ -51,7 +51,6 @@ public:
     enum ports_id {IP_0_DATA_ROLL, IP_1_DATA_PITCH, IP_2_DATA_YAW, IP_3_DATA_Z, OP_0_CMD, OP_1_ARM};
     void process(DataMessage* t_msg, Port* t_port);
     DataMessage* runTask(DataMessage*); 
-    std::vector<Port*> getPorts();
     enum unicast_addresses {broadcast, unicast_ActuationSystem_commands, unicast_ActuationSystem_armed};
     enum receiving_channels {ch_roll=0, ch_pitch=1, ch_yaw=2, ch_throttle=3};
     void receiveMsgData(DataMessage* t_msg);

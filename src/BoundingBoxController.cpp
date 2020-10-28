@@ -70,10 +70,6 @@ void BoundingBoxController::process(DataMessage* t_msg, Port* t_port) {
 // 	}
 // }
 
-std::vector<Port*> BoundingBoxController::getPorts(){ //TODO move to Block
-    return _ports;
-}
-
 void BoundingBoxController::reset(){
 }
 

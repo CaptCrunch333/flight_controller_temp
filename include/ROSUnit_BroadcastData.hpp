@@ -69,7 +69,6 @@ public:
                     IP_7_X_REF, IP_8_Y_REF, IP_9_Z_REF, IP_10_ROLL_REF, IP_11_PITCH_REF, IP_12_YAW_REF, IP_13_YAWRATE_REF,
                     IP_14_MOTORS, IP_15_ARMED};
     void process(DataMessage* t_msg, Port* t_port);
-    std::vector<Port*> getPorts();
 
     enum ros_broadcast_channels {broadcast, x, y, z, roll, pitch, yaw, yaw_rate, actuation, armed, control_outputs, references, waypoints, error};
     ROSUnit_BroadcastData(ros::NodeHandle&);

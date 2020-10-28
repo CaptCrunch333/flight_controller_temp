@@ -36,7 +36,6 @@ public:
 	void switchIn(DataMessage*);
     DataMessage* switchOut();
 	void process(DataMessage* t_msg, Port* t_port);
-    std::vector<Port*> getPorts();
     void reset();
     void initialize(BB_parameters*);
 	DataMessage* runTask(DataMessage*);

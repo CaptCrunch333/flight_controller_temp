@@ -38,7 +38,6 @@ class PIDController : public Controller{
     public:
         enum ports_id {IP_0_DATA, IP_1_UPDATE, IP_2_RESET, OP_0_DATA};
         void process(DataMessage* t_msg, Port* t_port);
-        std::vector<Port*> getPorts();
         //Chehadeh's code
         float prev_err = 0, prev2_err = 0, prev_pv_rate = 0, accum_u = 0, accum_I = 0;
         void initialize(PID_parameters);
