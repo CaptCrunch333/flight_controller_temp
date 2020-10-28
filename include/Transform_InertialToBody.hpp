@@ -3,7 +3,6 @@
 #include "common_srv/MsgReceiver.hpp"
 #include "cmath"
 #include "RotationMatrix3by3.hpp"
-#include <atomic>
 #include "common_srv/Vector3DMessage.hpp"
 #include "common_srv/FloatMsg.hpp"
 #include "common_srv/Block.hpp"
@@ -13,9 +12,9 @@
 class Transform_InertialToBody : public Block {
 
 private:
-    static std::atomic<float>  _inertial_command_x;
-    static std::atomic<float>  _inertial_command_y;
-    static std::atomic<float>  _inertial_command_z;
+    float  _inertial_command_x;
+    float  _inertial_command_y;
+    float  _inertial_command_z;
     bool _opti_x_received = false, _opti_y_received = false, _current_yaw_received = false;
     RotationMatrix3by3 _rotation_matrix;
 

@@ -10,7 +10,6 @@
 #include "Sum.hpp"
 #include "Mux3D.hpp"
 #include "Demux3D.hpp"
-#include <atomic>
 
 class CircularProcessVariableReference :public Block{
 

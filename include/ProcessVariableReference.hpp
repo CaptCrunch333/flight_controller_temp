@@ -3,12 +3,12 @@
 #include "common_srv/FloatMsg.hpp"
 #include "common_srv/Vector3D.hpp"
 #include "common_srv/Vector3DMessage.hpp"
-#include <atomic>
+
 class ProcessVariableReference : public Reference{
 
 private:
     reference_type _reference_type;
-    std::atomic<float> _reference_value; // TODO-Chehadeh: make thread-safe
+    float _reference_value; // TODO-Chehadeh: make thread-safe
     Vector3DMessage m_error_msg;
     block_id _id;
 
