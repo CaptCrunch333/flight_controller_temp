@@ -12,9 +12,9 @@
 class Transform_InertialToBody : public Block {
 
 private:
-    float  _inertial_command_x;
-    float  _inertial_command_y;
-    float  _inertial_command_z;
+    static float  _inertial_command_x;
+    static float  _inertial_command_y;
+    static float  _inertial_command_z;
     bool _opti_x_received = false, _opti_y_received = false, _current_yaw_received = false;
     RotationMatrix3by3 _rotation_matrix;
 
