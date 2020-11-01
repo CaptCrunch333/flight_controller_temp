@@ -16,6 +16,7 @@
 #include "ROSUnit_Xsens.hpp"
 #include "Transform_InertialToBody.hpp"
 #include "RestrictedNormWaypointRefGenerator.hpp"
+#include "PIDController.hpp"
 #include "ROSUnit_RestNormSettings.hpp"
 #include "Saturation.hpp"
 #include "CircularProcessVariableReference.hpp"
@@ -28,7 +29,6 @@
 #include <pthread.h>
 #include <sched.h>
 #include "BoundingBoxController.hpp"
-#include "PIDplusMRFTController.hpp"
 #include "Switch.hpp"
 #include "Sum.hpp"
 #include "Mux3D.hpp"
