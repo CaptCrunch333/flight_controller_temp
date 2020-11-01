@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: positioning_system
-Description: Description of positioning_system
-Version: 0.0.0
-Cflags: 
-Libs: -L/usr/local/lib 
-Requires: 

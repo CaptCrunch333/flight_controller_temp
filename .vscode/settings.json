@@ -72,5 +72,6 @@
         "future": "cpp",
         "*.txx": "cpp",
         "forward_list": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }
