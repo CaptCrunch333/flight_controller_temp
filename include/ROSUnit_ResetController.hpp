@@ -15,13 +15,11 @@ class ROSUnit_ResetController :  public ROSUnit{
         static IntegerMsg _reset_msg; 
         ros::ServiceServer _srv_reset_controller;
         static bool callbackResetController(flight_controller::Reset_Controller::Request  &req, flight_controller::Reset_Controller::Response &res);
-        void receiveMsgData(DataMessage* t_msg);  
         static Port* _output_port;
         
     public:
         enum ports_id {OP_0_DATA};
-        void process(DataMessage* t_msg, Port* t_port);
-        DataMessage* runTask(DataMessage*);
+        void process(DataMessage* t_msg, Port* t_port) {};
 
         ROSUnit_ResetController(ros::NodeHandle&);
         ~ROSUnit_ResetController();

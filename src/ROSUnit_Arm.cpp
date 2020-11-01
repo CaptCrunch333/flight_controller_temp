@@ -14,11 +14,6 @@ ROSUnit_Arm::~ROSUnit_Arm() {
 
 }
 
-void ROSUnit_Arm::receiveMsgData(DataMessage* t_msg){
-
-
-}
-
 void ROSUnit_Arm::process(DataMessage* t_msg, Port* t_port){
 }
 
@@ -28,10 +23,7 @@ DataMessage* ROSUnit_Arm::runTask(DataMessage* t_msg){
 
 bool ROSUnit_Arm::callbackArm(flight_controller::Arm::Request &req, flight_controller::Arm::Response &res){
 
-    bool data;
-    data = req.armed;
-
-    _bool_msg.data = data;
+    _bool_msg.data = req.armed;;
     _instance_ptr->_output_port->receiveMsgData(&_bool_msg);
     
     return true;

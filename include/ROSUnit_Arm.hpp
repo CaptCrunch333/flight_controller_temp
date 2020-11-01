@@ -13,7 +13,6 @@ class ROSUnit_Arm :  public ROSUnit{
         static BooleanMsg _bool_msg; 
         ros::ServiceServer _srv_armed;
         static bool callbackArm(flight_controller::Arm::Request  &req, flight_controller::Arm::Response &res);
-        void receiveMsgData(DataMessage* t_msg);  
         static Port* _output_port;
     
     public:

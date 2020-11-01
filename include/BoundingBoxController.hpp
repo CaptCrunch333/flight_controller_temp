@@ -33,8 +33,7 @@ public:
 
     enum ports_id {IP_0_DATA, IP_1_UPDATE, IP_2_RESET, OP_0_DATA};
 
-	void switchIn(DataMessage*);
-    DataMessage* switchOut();
+
 	void process(DataMessage* t_msg, Port* t_port);
     void reset();
     void initialize(BB_parameters*);
@@ -45,7 +44,5 @@ public:
 
     BoundingBoxController(block_id t_id);
     ~BoundingBoxController();
-
-    void receiveMsgData(DataMessage* t_msg){}
 
 };

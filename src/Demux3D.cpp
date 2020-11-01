@@ -16,17 +16,14 @@ Demux3D::~Demux3D() {
 
 DataMessage* Demux3D::runTask(DataMessage* t_msg){
 
-    FloatMsg* _op_0_msg = new FloatMsg();
-    _op_0_msg->data = _ip.x;
-    this->_output_port_0->receiveMsgData(_op_0_msg);
+    _op_0_msg.data = _ip.x;
+    this->_output_port_0->receiveMsgData(&_op_0_msg);
 
-    FloatMsg* _op_1_msg = new FloatMsg();
-    _op_1_msg->data = _ip.y;
-    this->_output_port_1->receiveMsgData(_op_1_msg);
+    _op_1_msg.data = _ip.y;
+    this->_output_port_1->receiveMsgData(&_op_1_msg);
 
-    FloatMsg* _op_2_msg = new FloatMsg();
-    _op_2_msg->data = _ip.z;
-    this->_output_port_2->receiveMsgData(_op_2_msg);
+    _op_2_msg.data = _ip.z;
+    this->_output_port_2->receiveMsgData(&_op_2_msg);
 
     return t_msg;
 }

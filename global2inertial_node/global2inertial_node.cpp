@@ -47,8 +47,6 @@ int main(int argc, char **argv){
         }
         i++;
         rate.sleep();
-
     }
-
     return 0;
 }

@@ -38,7 +38,7 @@ class ROSUnit_UpdateController :  public ROSUnit{
     public:
         enum ports_id {OP_0_PID, OP_1_MRFT, OP_2_BB};
         void process(DataMessage* t_msg, Port* t_port) {};
-        enum unicast_addresses {broadcast, pid, mrft, sm};
+        // enum unicast_addresses {broadcast, pid, mrft, sm};
         ROSUnit_UpdateController(ros::NodeHandle&);
         ~ROSUnit_UpdateController();
 };

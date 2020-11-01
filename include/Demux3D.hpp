@@ -15,6 +15,7 @@ private:
     Port* _output_port_0;
     Port* _output_port_1;
     Port* _output_port_2;
+    FloatMsg _op_0_msg, _op_1_msg, _op_2_msg;
     Vector3D<float> _ip;
 
 public:

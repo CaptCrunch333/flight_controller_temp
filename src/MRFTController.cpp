@@ -5,8 +5,9 @@ MRFTController::MRFTController(block_id t_id) {
 	_id = t_id;
 	_input_port_0 = new InputPort(ports_id::IP_0_DATA, this);
 	_input_port_1 = new InputPort(ports_id::IP_1_UPDATE, this);
+	_input_port_2 = new InputPort(ports_id::IP_2_RESET, this);
 	_output_port = new OutputPort(ports_id::OP_0_DATA, this);
-    _ports = {_input_port_0, _input_port_1, _output_port};
+    _ports = {_input_port_0, _input_port_1, _input_port_2, _output_port};
 }
 
 MRFTController::~MRFTController() {
@@ -75,6 +76,7 @@ DataMessage* MRFTController::runTask(DataMessage* t_msg){
 
     this->_output_port->receiveMsgData(&_command_msg);
 
+	//std::cout<<"MRFT CONTROLLER"<<std::endl;
 	return (DataMessage*) &_command_msg;
 }
 
@@ -85,15 +87,11 @@ void MRFTController::initialize(MRFT_parameters* para){
 	parameters.relay_amp = para->relay_amp;
 	parameters.bias = para->bias;
 	parameters.id = para->id;
-	if(para->dt > 0){
-		_dt = para->dt;
-	}
 
 	Logger::getAssignedLogger()->log("MRFT SETTINGS: ID_%.0f", static_cast<int>(parameters.id), LoggerLevel::Info);
 	Logger::getAssignedLogger()->log("Beta: %.2f", parameters.beta, LoggerLevel::Info);
 	Logger::getAssignedLogger()->log("Relay_amp: %.2f", parameters.relay_amp, LoggerLevel::Info);
 	Logger::getAssignedLogger()->log("Bias: %.6f", parameters.bias, LoggerLevel::Info);
-	Logger::getAssignedLogger()->log("dt: %.6f", _dt, LoggerLevel::Info);
 
 }
 

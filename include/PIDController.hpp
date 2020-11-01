@@ -46,9 +46,6 @@ class PIDController : public Controller{
         void set_I_term(float);
         //---------------
         void update_params(PID_parameters*);
-        enum receiving_channels {ch_update, ch_reset};
-        // void switchIn(DataMessage*);
-        // DataMessage* switchOut();
         void reset();
         DataMessage* runTask(DataMessage*);
         controller_type getControllerType(){ return _controller_type; }

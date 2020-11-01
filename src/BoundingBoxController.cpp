@@ -17,17 +17,6 @@ BoundingBoxController::~BoundingBoxController() {
 
 }
 
-void BoundingBoxController::switchIn(DataMessage* t_msg){
-	Logger::getAssignedLogger()->log("SWITCH IN BOUNDING_BOX CONTROLLER", LoggerLevel::Warning);
-}
-
-DataMessage* BoundingBoxController::switchOut(){
-	Logger::getAssignedLogger()->log("SWITCH OUT BOUNDING_BOX CONTROLLER", LoggerLevel::Warning);
-    
-	_switchout_msg.setSwitchOutMsg(0.0);
-
-    return (DataMessage*)&_switchout_msg;
-} 
 
 void BoundingBoxController::process(DataMessage* t_msg, Port* t_port) {
 
@@ -50,25 +39,6 @@ void BoundingBoxController::process(DataMessage* t_msg, Port* t_port) {
 	}
 }
 
-// void BoundingBoxController::receiveMsgData(DataMessage* t_msg){
-
-// 	if(t_msg->getType() == msg_type::UPDATECONTROLLER){
-// 		ControllerMessage* sm_msg = (ControllerMessage*)t_msg;
-// 		BB_parameters params = sm_msg->getSMParam();
-
-// 		if(params.id == this->_id){		
-// 			this->initialize(&params);	
-// 		}
-
-// 	}else if(t_msg->getType() == msg_type::INTEGER){
-// 		IntegerMsg* integer_msg = (IntegerMsg*)t_msg;
-
-// 		if(static_cast<block_id>(integer_msg->data) == this->_id){
-// 			Logger::getAssignedLogger()->log("RESET CONTROLLER: %.0f", (int)this->_id, LoggerLevel::Warning);
-// 			this->reset();
-// 		}
-// 	}
-// }
 
 void BoundingBoxController::reset(){
 }
@@ -92,7 +62,7 @@ DataMessage* BoundingBoxController::runTask(DataMessage* t_msg){
 	Vector3DMessage* controller_msg = (Vector3DMessage*)t_msg;
 
     Vector3D<float> data = controller_msg->getData();
-	
+	//std::cout<<"BOUNDING BOX CONTROLLER"<<std::endl;
 	// data.x is Error
 	// data.y is PV_First
 	// data.z is PV_Second

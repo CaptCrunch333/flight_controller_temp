@@ -21,10 +21,9 @@ DataMessage* Mux3D::runTask(DataMessage* t_msg){
     mux_data.y = _ip_1;
     mux_data.z = _ip_2;
 
-    Vector3DMessage* mux3d_msg = new Vector3DMessage();
-    mux3d_msg->setVector3DMessage(mux_data);
+    mux3d_msg.setVector3DMessage(mux_data);
 
-    this->_output_port->receiveMsgData(mux3d_msg);
+    this->_output_port->receiveMsgData(&mux3d_msg);
 
     return t_msg;
 }
