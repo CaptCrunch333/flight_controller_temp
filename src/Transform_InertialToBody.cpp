@@ -1,8 +1,8 @@
 #include "Transform_InertialToBody.hpp"
 
-std::atomic<float>  Transform_InertialToBody::_inertial_command_x;
-std::atomic<float>  Transform_InertialToBody::_inertial_command_y;
-std::atomic<float>  Transform_InertialToBody::_inertial_command_z;
+float  Transform_InertialToBody::_inertial_command_x;
+float  Transform_InertialToBody::_inertial_command_y;
+float  Transform_InertialToBody::_inertial_command_z;
 
 Transform_InertialToBody::Transform_InertialToBody() {
     this->_input_port_0 = new InputPort(ports_id::IP_0_X, this);
