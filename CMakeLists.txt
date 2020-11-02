@@ -73,7 +73,4 @@ add_dependencies(flight_controller flight_controller_generate_messages_cpp)
 add_dependencies(providers_node flight_controller_generate_messages_cpp)
 add_dependencies(waypoint_reference_node flight_controller_generate_messages_cpp)
 add_dependencies(global2inertial_node flight_controller_generate_messages_cpp)
-<<<<<<< HEAD
-=======
 add_dependencies(example_node flight_controller_generate_messages_cpp)
->>>>>>> 034d9066e45565a460b98b2304b27931f3da4bdb
