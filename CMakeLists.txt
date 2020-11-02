@@ -61,12 +61,19 @@ add_executable(${PROJECT_NAME} flight_controller_node/flight_controller_node.cpp
 add_executable(providers_node providers_node/providers_node.cpp ${SOURCE_FILES})
 add_executable(waypoint_reference_node waypoint_reference_node/waypoint_reference_node.cpp ${SOURCE_FILES})
 add_executable(global2inertial_node global2inertial_node/global2inertial_node.cpp ${SOURCE_FILES})
+add_executable(example_node example_node/example_node.cpp ${SOURCE_FILES})
+
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 target_link_libraries(providers_node ${catkin_LIBRARIES})
 target_link_libraries(waypoint_reference_node ${catkin_LIBRARIES})
 target_link_libraries(global2inertial_node ${catkin_LIBRARIES})
+target_link_libraries(example_node ${catkin_LIBRARIES})
 
 add_dependencies(flight_controller flight_controller_generate_messages_cpp)
 add_dependencies(providers_node flight_controller_generate_messages_cpp)
 add_dependencies(waypoint_reference_node flight_controller_generate_messages_cpp)
 add_dependencies(global2inertial_node flight_controller_generate_messages_cpp)
+<<<<<<< HEAD
+=======
+add_dependencies(example_node flight_controller_generate_messages_cpp)
+>>>>>>> 034d9066e45565a460b98b2304b27931f3da4bdb
