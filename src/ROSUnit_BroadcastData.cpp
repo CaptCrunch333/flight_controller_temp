@@ -44,7 +44,7 @@ ROSUnit_BroadcastData::~ROSUnit_BroadcastData() {
 }
 
 void ROSUnit_BroadcastData::process(DataMessage* t_msg, Port* t_port) {
-    
+    //std::cout<< "broadcast data rec " << (int)t_port->getID() << "\n";
     if(t_port->getID() == ports_id::IP_0_X_OUTPUT){
         FloatMsg* float_msg = (FloatMsg*)t_msg;
         _cs_outputs[0] = (double)float_msg->data;
@@ -64,6 +64,7 @@ void ROSUnit_BroadcastData::process(DataMessage* t_msg, Port* t_port) {
         msg.data = _cs_outputs;
         _cs_prov_pub.publish(msg);
     } else if(t_port->getID() == ports_id::IP_5_YAW_OUTPUT){
+        //std::cout << "broadcast yaaaw rec \n";
         FloatMsg* float_msg = (FloatMsg*)t_msg;
         _cs_outputs[5] = (double)float_msg->data;
     } else if(t_port->getID() == ports_id::IP_6_YAWRATE_OUTPUT){

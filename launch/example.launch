@@ -5,6 +5,6 @@
   name="providers_node" output="screen"/> 
   <node pkg="flight_controller" type="waypoint_reference_node" 
   name="waypoint_reference_node" output="screen"/> 
-  <node pkg="flight_controller" type="example_node" 
+  <node pkg="flight_controller" type="example_flight_controller_node" 
   name="flight_controller" output="screen"/> 
 </launch> 
