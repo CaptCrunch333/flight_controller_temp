@@ -16,7 +16,13 @@ PIDController::~PIDController() {
 }
 
 void PIDController::process(DataMessage* t_msg, Port* t_port) {
+	if(this->_id == block_id::PID_Z) {
+		std::cout << "msg rec \n";
+	}
     if(t_port->getID() == ports_id::IP_0_DATA){
+		if(this->_id == block_id::PID_Z) {
+		std::cout << "data rec \n";
+	}
         this->runTask(t_msg);
     } else if(t_port->getID() == ports_id::IP_1_UPDATE){
         ControllerMessage* pid_msg = (ControllerMessage*)t_msg;
@@ -37,7 +43,9 @@ void PIDController::process(DataMessage* t_msg, Port* t_port) {
 DataMessage* PIDController::runTask(DataMessage* t_msg){
         
 	Vector3DMessage* controller_msg = (Vector3DMessage*)t_msg;
-
+	if(this->_id == block_id::PID_Z) {
+		std::cout << "pid running \n";
+	}
     Vector3D<float> data = controller_msg->getData();
 	float command = pid_direct(data.x, data.y, data.z);
 
