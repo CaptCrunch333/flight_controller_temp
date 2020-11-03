@@ -1,6 +1,9 @@
 //Flight Controller Example
 //1 Nov 2020
 //M. Wahbah
+// This an example node that shows the most basic flight controller for a drone.
+// It requires the global2inertial node and providers_node to provide required topics (pos and att measuerments)
+// This node has no controller settings - these should be set using the flight scenario
 #include <iostream>
 #include <vector>
 #include "ROSUnit_Optitrack.hpp"

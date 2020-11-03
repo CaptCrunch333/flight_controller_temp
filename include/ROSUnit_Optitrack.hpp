@@ -22,5 +22,4 @@ class ROSUnit_Optitrack : public ROSUnit{
 
         ROSUnit_Optitrack(ros::NodeHandle&);
         ~ROSUnit_Optitrack();
-
 };
